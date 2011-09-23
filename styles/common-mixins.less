@@ -1,0 +1,223 @@
+/* Common LESS CSS mixins */
+
+
+/* -- Borders ---------------------------------------------------------------*/
+.border-radius(@radius) {
+	//border-radius:@radius; // CSS3/IE9/Safari 5/Chrome 4/FFX4 (disabled until IE9s box shadow is less ugly)
+	-moz-border-radius:@radius; // FFX1-3.5
+	-webkit-border-radius:@radius; // Safari 3/Chrome 0.2
+	//IE <9 has no CSS border-radius support
+}
+
+/* -- Sitewide radius default -- */
+@corner-radius: 6px;
+
+
+/* -- Shadows ---------------------------------------------------------------*/
+.box-shadow(@dims:0 0 10px, @color:#333) {
+	box-shadow: @dims @color; // Opera, FFX4
+	-moz-box-shadow:@dims @color; // FFX3.5
+	-webkit-box-shadow:@dims @color; // Safari/Chrome/WebKit
+	.ie7 { filter: e(%("progid:DXImageTransform.Microsoft.Shadow(color='%d', Direction=135, Strength=3)", @color)); }
+}
+
+.soft-shadow(@dims:0 0 10px, @color:#ddd) {
+	box-shadow: @dims @color; // Opera, FFX4
+	-moz-box-shadow:@dims @color; // FFX3.5
+	-webkit-box-shadow:@dims @color; // Safari/Chrome/WebKit
+	.ie7 { filter: e(%("progid:DXImageTransform.Microsoft.Shadow(color='%d', Direction=135, Strength=3)", @color)); }
+}
+
+.inner-shadow(@dims, @color) {
+	box-shadow: @dims @color inset; // Opera, FFX4
+	-moz-box-shadow:@dims @color inset; // FFX3.5
+	-webkit-box-shadow:@dims @color inset; // Safari/Chrome/WebKit
+}
+
+.textbox-shadow(@color:#ccc, @dims:0 1px 1px 0) {
+    -moz-box-shadow: @dims @color inset;
+    -webkit-box-shadow: @dims @color inset;
+    box-shadow: @dims @color inner;
+}
+
+.textbox-glow(@shadow_color:#B5C5D5, @shadow_dims:0 1px 1px 0px, 
+        @glow_color:#79acdd, @glow_dims:0 0 2px 2px, @inner_glow_dims:0 0 2px 0) {
+    -moz-box-shadow: @shadow_dims @shadow_color inset, @glow_dims @glow_color, @inner_glow_dims @glow_color inset;
+    -webkit-box-shadow: @shadow_dims @shadow_color inset, @glow_dims @glow_color, @inner_glow_dims @glow_color inset;
+    box-shadow: @shadow_dims @shadow_color inner, @glow_dims @glow_color, @inner_glow_dims @glow_color inset;
+}
+
+.no-shadow() {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    .no-ie-filter();
+}
+
+.no-ie-filter() {
+    filter: -;   // IE6/7
+	  -ms-filter: -;  // IE8  
+}
+
+/* -- Transition ---------------------------------------------------------------*/
+
+.transition (@time: .2s, @range: all, @ease: ease-in) {
+	-moz-transition: @range @time @ease;
+	-webkit-transition: @range @time @ease;
+	-o-transition: @range @time @ease;
+	transition: @range @time @ease;
+}
+
+.no-transition() {
+	-moz-transition: none !important;
+	-webkit-transition: none !important;
+	-o-transition: none !important;
+	transition: none !important;    
+}
+
+
+/* -- ICON SPRITE helpers --------------------------------------------------- */
+
+//these mixins let you reference a sprite by its position in the grid.
+//example: .small-icons(1,2); shows the icon in the first col, second row.
+
+.sprite-grid(@col, @row, @grid_size) {
+    background-repeat: no-repeat;
+    background-position: (@col - 1) * (0 - @grid_size) (@row - 1) * (0 - @grid_size);
+    height: @grid_size;
+    width: @grid_size;
+    position: absolute;
+}
+
+.sprite-row(@row, @grid_size, @horizPosition:0) {
+    background-repeat: no-repeat;
+    background-position: @horizPosition ((@row - 1) * (0 - @grid_size));
+    height: @grid_size;
+}
+
+.cp-icons(@col:1, @row:1) {
+    background: url(Images/icns-cp.png);
+    .sprite-grid(@col + 1, @row + 1, 25px);
+}
+.icons(@row:1) {
+    background-image: url(Images/icns-tools.png);
+    .sprite-row(@row, 25px);
+}
+
+.small-icons(@col:3, @row:11) {
+    background: url(Images/icns-small.png);
+    .sprite-grid(@col, @row, 25px);
+}
+
+.large-icons(@col, @row) {
+    background: url(Images/icns-pcma.png);
+    .sprite-grid(@col, @row, 38px);
+}
+
+.control-buttons(@col, @row) {
+    background: url(Images/btn-ctrl.png);
+    .sprite-grid(@col, @row, 25px);
+}
+
+.arrow-buttons(@col, @row) {
+    background: url(Images/btn-ctrl.png);
+    .sprite-grid(@col, @row, 25px);
+}
+
+.texture(@top) {
+    background-image: url(Images/bg.png);
+    background-repeat:repeat-x ;
+    background-position: 0 @top;
+}
+
+.gradient(@top:0) {
+    background-image: url(Images/bg-gradient.png);
+    background-repeat:repeat-x ;
+    background-position: 0 @top;
+}
+
+/* pete added 062011 */
+.iconF(@row:1,@horizPosition:0) {
+    background: url(Images/icns-facet.png);
+    .sprite-row(@row, 25px, @horizPosition);
+}
+
+.linear-gradient-top(@a1,@a2,@a3,@a4) {
+    background-color: @a2; //fallback for unsupported browsers
+    background: -moz-linear-gradient(top, @a1,@a2,@a3,@a4);
+    background: -webkit-linear-gradient(top, @a1,@a2,@a3,@a4);
+    background: -o-linear-gradient(top, @a1,@a2,@a3,@a4);
+    background: -ms-linear-gradient(top, @a1,@a2,@a3,@a4);
+    background: linear-gradient(top, @a1,@a2,@a3,@a4);
+}
+
+.linear-gradient-top-2(@a1,@a2) {
+    background-color: @a2; //fallback for unsupported browsers
+    background: -moz-linear-gradient(top, @a1,@a2);
+    background: -webkit-linear-gradient(top, @a1,@a2);
+    background: -o-linear-gradient(top, @a1,@a2);
+    background: -ms-linear-gradient(top, @a1,@a2);
+    background: linear-gradient(top, @a1,@a2);
+}
+
+//for those rare times when you don't want the full sprite grid styles
+@small-icons: url(images/icns-small.png) no-repeat;
+
+/* } */
+
+.opacity(@val) {
+    -moz-opacity: @val;
+    -khtml-opacity: @val;
+    -webkit-opacity: @val;
+    opacity: @val;
+    //IE's alpha filters are too unpredictable.
+}
+
+
+/* -- Image Stuff ----------------------------------------------- */
+@image_path: "Images/";
+
+.bg_img(@img) {  background: e(%("url(%s%s)", @image_path, @img)); }
+
+@loading-icon: url(Images/xhr-loading.gif);
+@loading-chippy: url(Images/xhr-loading-chippy.gif);
+@jtweets-logo: url(Images/journalisttweetslogo.png);
+
+
+
+/* -- Color Mixins ----------------------------------------------- */
+.color-red { color:red; }
+.color-blue { color:blue; }
+
+@onColor: #eaf6ff;
+@bgColor: #F6FBFF;
+@bgColor2: #E9F4FF;
+@bgHover: #FAFDFF;
+@hilite: #AACCEE;
+@borderHover: #DCEAF8;
+@dark: #546EA4;
+
+@bgFilterOn: #eefffc;
+@bgFilter: #F6Fffb;
+@bgFilter2: #E9Fff4;
+@bgFilterHov: #FAfffd;
+@hiliteFilter: #aaddbb;
+@borderFilterHov: #DCe7d9;
+@darkFilter: #54a46e;
+
+@message: #ffffee;
+@message2: #77eecc;
+
+@color-blank: #fff;
+
+
+
+/* -- border mixins ----------------------------------------------*/
+@border-dottom: 1px dotted #ddd;
+
+.items-border() {
+    li { border-bottom: @border-dottom; }
+    li:last-child { border-bottom:none; }
+}
+
+@borderhilite: 1px solid #AACCEE;

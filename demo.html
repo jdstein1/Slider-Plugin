@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Slider - jQuery UI Example Page</title>
+<link type="text/css" href="./styles/jquery-ui-1.8.13.custom.css" rel="stylesheet">
+<!-- Normal LESS inclusion notation for other browsers -->
+<link rel="stylesheet/less" href="./styles/slider.less" />
+<!-- Required LESS inclusion notation for Chrome -->
+<link rel="stylesheet" type="text/less" href="./styles/slider.less" />
+<script type="text/javascript" src="./scripts/less-1.1.3.min.js"></script>
+</head>
+<body>
+<form id="box" autocomplete="off">
+<div id="sliderRangeNew" class="slider">
+	<fieldset></fieldset>
+</div>
+<div id="sliderRankNew" class="slider">
+	<fieldset></fieldset>
+</div>
+<div id="sliderRangeNew2" class="slider">
+	<fieldset>
+		<input class="inputLower" type="text" value="511" />
+		<input class="inputUpper" type="text" value="1511" />
+		<input class="inputMin" type="text" value="0" />
+		<input class="inputMax" type="text" value="2000" />
+	</fieldset>
+</div>
+<div id="sliderRankNew2" class="slider">
+	<fieldset>
+		<input class="inputSingle" type="text" value="111" />
+		<input class="inputMin" type="text" value="0" />
+		<input class="inputMax" type="text" value="200" />
+	</fieldset>
+</div>
+</form>
+<script type="text/javascript" src="./scripts/jquery-1.6.min.js"></script>
+<script type="text/javascript" src="./scripts/jquery-ui-1.8.13.custom.min.js"></script>
+<script type="text/javascript" src="./scripts/pluginSlider.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+    // Get all data points from here:
+    $('#sliderRangeNew').doUniSlider({
+        getDataFromInputs : false,
+        range : true,
+        values : [510,1510],
+        max : 2000,
+        min : 0,
+		step : 10
+    });
+
+    // Get all data points from here:
+    $('#sliderRankNew').doUniSlider({
+        getDataFromInputs : false,
+        range : 'min',
+        value : 112,
+        max : 200,
+        min : 0,
+		step : 2
+    });
+
+	// Get all data points from here:
+    $('#sliderRangeNew2').doUniSlider({
+        getDataFromInputs : true,
+        range : true
+    });
+	
+    // Get all data points from here:
+    $('#sliderRankNew2').doUniSlider({
+        getDataFromInputs : true,
+        range : 'max'
+    });
+	
+});
+</script>
+</body>
+</html>
