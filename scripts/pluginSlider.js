@@ -121,8 +121,8 @@ v/Beta
 			$mySlider.addClass('slider');
 
 			// Tell us which slider instance we are working with.
-			console.log('::::::::::::::::::');
-			console.log('$mySlider: ', $mySlider.attr('id'));
+//			console.log('::::::::::::::::::');
+//			console.log('$mySlider: ', $mySlider.attr('id'));
 
 			// Fieldset Checker - Make sure all inputs are in a fieldset.
 			// Find out if a fieldset exists within the slider already.
@@ -157,7 +157,7 @@ v/Beta
 
 //				console.log('min:', myMin, ' - ', myValues, '- ', myMax, ':max');
 
-				console.info("lower input value: ", $mySlider.find('.' + settings.inputLowerClass).val());
+//				console.info("lower input value: ", $mySlider.find('.' + settings.inputLowerClass).val());
 
 				myValues.push( parseInt($mySlider.find('.' + settings.inputLowerClass).val()) );
 				myValues.push( parseInt($mySlider.find('.' + settings.inputUpperClass).val()) );
@@ -174,12 +174,12 @@ v/Beta
 
 //				console.log('min:', myMin, ' - ', myValues, '- ', myMax, ':max');
 
-				console.log('$myInputLower: ',$myInputLower)
+//				console.log('$myInputLower: ',$myInputLower)
 
-				console.info("lower input value2: ", $mySlider.find('.' + settings.inputLowerClass).val());
-				console.info("lower input value2a: ", $mySlider.find('.' + settings.inputLowerClass).prop('value'));
-				console.info("lower input value2b: ", $mySlider.find('.' + settings.inputLowerClass).attr('value'));
-				console.info("lower input value2c: ", $mySlider.find('.' + settings.inputLowerClass));
+//				console.info("lower input value2: ", $mySlider.find('.' + settings.inputLowerClass).val());
+//				console.info("lower input value2a: ", $mySlider.find('.' + settings.inputLowerClass).prop('value'));
+//				console.info("lower input value2b: ", $mySlider.find('.' + settings.inputLowerClass).attr('value'));
+//				console.info("lower input value2c: ", $mySlider.find('.' + settings.inputLowerClass));
 
 				// Get data from inputs and is NOT a range slider.
 			} else if ( settings.getDataFromInputs === true && settings.range != true ) {
@@ -192,7 +192,7 @@ v/Beta
 
 //				console.log('min:', myMin, ' - ', myValue, ' - ', myMax, ':max');
 
-				console.info("single input value: ", $mySlider.find('.' + settings.inputSingleClass).val());
+//				console.info("single input value: ", $mySlider.find('.' + settings.inputSingleClass).val());
 
 				myValue = parseInt($mySlider.find('.' + settings.inputSingleClass).val());
 				myMin = $mySlider.find('.' + settings.inputMinClass).val();
@@ -207,16 +207,16 @@ v/Beta
 
 //				console.log('min:', myMin, ' - ', myValue, ' - ', myMax, ':max');
 
-				console.info("single input value1: ", $mySlider.find('.' + settings.inputSingleClass).val());
-				console.info("single input value1a: ", $mySlider.find('.' + settings.inputSingleClass).prop('value'));
-				console.info("single input value1b: ", $mySlider.find('.' + settings.inputSingleClass).attr('value'));
-				console.info("single input value1c: ", $mySlider.find('.' + settings.inputSingleClass));
-				console.info("settings: ",settings);
+//				console.info("single input value1: ", $mySlider.find('.' + settings.inputSingleClass).val());
+//				console.info("single input value1a: ", $mySlider.find('.' + settings.inputSingleClass).prop('value'));
+//				console.info("single input value1b: ", $mySlider.find('.' + settings.inputSingleClass).attr('value'));
+//				console.info("single input value1c: ", $mySlider.find('.' + settings.inputSingleClass));
+//				console.info("settings: ",settings);
 
 			// Do nothing here if we are NOT getting data from inputs.
 			} else if ( settings.getDataFromInputs != true && settings.range === true ) {
 				// Value or values will be passed in.  Do nothing.
-				console.log('passed in...');
+//				console.log('passed in...');
 
 //				console.log('min:', myMin, ' - ', myValues, '- ', myMax, ':max');
 				
@@ -225,13 +225,13 @@ v/Beta
 				var $myInputUpper = $('<input />').addClass(settings.inputUpperClass).attr('type','text').attr('value',myValues[1]);
 				var $myInputMinT = $('<input />').addClass(settings.inputMinClass).attr('type','text').attr('value',myMin);
 				var $myInputMaxT = $('<input />').addClass(settings.inputMaxClass).attr('type','text').attr('value',myMax);
-				console.log('$myInputLower: ',$myInputLower)
+//				console.log('$myInputLower: ',$myInputLower)
 
 //				console.log('min:', myMin, ' - ', myValues, '- ', myMax, ':max');
 
 			} else if ( settings.getDataFromInputs != true && settings.range != true ) {
 				// Value or values will be passed in.  Do nothing.
-				console.log('passed in...');
+//				console.log('passed in...');
 
 				// Create the value input & min and max inputs if we are passing in data.
 				var $myInputSingle = $('<input />').addClass(settings.inputSingleClass).attr('type','text').attr('value',myValue);
@@ -240,12 +240,12 @@ v/Beta
 
 //				console.log('min:', myMin, ' - ', myValue, ' - ', myMax, ':max');
 
-				console.info("single input value4: ", $mySlider.find('.' + settings.inputSingleClass).val());
-				console.info("settings: ",settings);
+//				console.info("single input value4: ", $mySlider.find('.' + settings.inputSingleClass).val());
+//				console.info("settings: ",settings);
 
 			} else {
 				// Value or values will be passed in.  Do nothing.
-				console.log('error');
+//				console.log('error');
 			};
 			
 			var createSlider = function( $mySlider, ui ) {
@@ -338,23 +338,23 @@ v/Beta
 				value: myValue,
 				values: myValues,
 				create: function( event, ui ) {
-					console.log('-CREATE event triggered');
+//					console.log('-CREATE event triggered');
 					createSlider( $mySlider, ui );
 				},
 				start: function( event, ui ) {
-					console.log('-START event triggered');
+//					console.log('-START event triggered');
 					startSlider( $mySlider, ui );
 				},
 				stop: function( event, ui ) {
-		            console.log('-STOP event triggered');
+//		            console.log('-STOP event triggered');
 					stopSlider( $mySlider, ui );
 				},
 				slide: function( event, ui ) {
-		            console.log('-SLIDE event triggered');
+//		            console.log('-SLIDE event triggered');
 					slideSlider( $mySlider, ui );
 				},
 				change: function( event, ui ) {
-		            console.log('-CHANGE event triggered');
+//		            console.log('-CHANGE event triggered');
 					changeSlider( $mySlider, ui );
 				}				
 		
