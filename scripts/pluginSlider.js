@@ -285,6 +285,19 @@ v/Beta
 
 				// Reduce opacity to normal.
 				$mySlider.find('.ui-slider-handle').children().css({'opacity':'0.75','filter':'Alpha(Opacity=75)'});
+				
+				// Select all text inside input when it gains focus.
+				$mySlider.find('input[type=text]').focus(function() {
+					console.log('i have focus!: ', $(this).attr('class'), $(this).attr('value'));
+					this.select();
+				});
+				// Focus on the text input when the handle is clicked.
+				// But I don't want the text input to have focus during and after it is slid (slided?).
+				$mySlider.find('.ui-slider-handle').mouseup(function() {
+					var $myCurrentInput = $(this).find('input[type=text]');
+					console.log('i have click.focus!: ', $myCurrentInput.attr('class'), $myCurrentInput.attr('value'));
+					$myCurrentInput.focus();
+				});
 			};
 			
 			var startSlider = function( $mySlider, ui ) {
@@ -338,23 +351,27 @@ v/Beta
 				value: myValue,
 				values: myValues,
 				create: function( event, ui ) {
-//					console.log('-CREATE event triggered');
+					console.log('-CREATE event triggered');
 					createSlider( $mySlider, ui );
 				},
 				start: function( event, ui ) {
-//					console.log('-START event triggered');
+					// Triggered when clicked
+					console.log('-START event triggered');
 					startSlider( $mySlider, ui );
 				},
 				stop: function( event, ui ) {
-//		            console.log('-STOP event triggered');
+					// Triggered when clicked
+		            console.log('-STOP event triggered');
 					stopSlider( $mySlider, ui );
 				},
 				slide: function( event, ui ) {
-//		            console.log('-SLIDE event triggered');
+					// NOT Triggered when clicked
+		            console.log('-SLIDE event triggered');
 					slideSlider( $mySlider, ui );
 				},
 				change: function( event, ui ) {
-//		            console.log('-CHANGE event triggered');
+					// Triggered when clicked
+		            console.log('-CHANGE event triggered');
 					changeSlider( $mySlider, ui );
 				}				
 		
