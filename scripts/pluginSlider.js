@@ -10,7 +10,7 @@ Version : 4.0
 
 Notes
 =-=-=-=-=-=-=-=-=-=-=-=-=
-2011-Sep-26
+2011-Sep-26, 2011-Sep-30, 2011-Oct-03
 v/4.1
  - Attempting to add synchronization:  values entered into text inputs updates handle values.
 -------------------------
