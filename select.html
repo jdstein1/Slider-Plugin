@@ -159,8 +159,16 @@ v/1.0
             }
         });
         $( "#selectMinMax" ).change(function() {
-            slider.slider( "value", this.selectedIndex + 1 );
-            $inputMinMax.val(this.value);
+            minMaxNew = this.value;
+//            slider.slider( "value", this.selectedIndex + 1 );
+            slider.slider( "value", minMaxNew );
+            $inputMinMax.val(minMaxNew);
+        });
+        $( "#inputMinMax" ).change(function() {
+            minMaxNew = this.value;
+//            slider.slider( "value", this.selectedIndex + 1 );
+            slider.slider( "value", minMaxNew );
+            $selectMinMax.val(minMaxNew);
         });
     });
     $(function() {
@@ -229,61 +237,65 @@ v/1.0
             }
         });
         $inputLo.change(function() {
-            console.log( "++ change event LOW input" );
+//            console.log( "++ change event LOW input" );
+            myChangeEventCallback($inputLo);
 
             // Set value of low variable to new select option value
-            loNew = this.value;
+//            loNew = this.value;
 
             // Set low value in values array to new select option value
-            slider.slider( "values", [loNew,hiNew]);
+//            slider.slider( "values", [loNew,hiNew]);
 
             // Set value of high input to new select option value
-            $selectLo.val(loNew);
+//            $selectLo.val(loNew);
         });
         $selectLo.change(function() {
-            console.log( "++ change event LOW select" );
+//            console.log( "++ change event LOW select" );
+            myChangeEventCallback($selectLo);
 
             // Set value of low variable to new select option value
-            loNew = this.value;
+//            loNew = this.value;
 
             // Set low value in values array to new select option value
-            slider.slider( "values", [loNew,hiNew]);
+//            slider.slider( "values", [loNew,hiNew]);
 
             // Set value of high input to new select option value
-            $inputLo.val(loNew);
+//            $inputLo.val(loNew);
         });
         $inputHi.change(function() {
-            console.log( "++ change event HIGH input" );
-
-            // Set value of high variable to new select option value
-            hiNew = this.value;
-
-            // Set high value in values array to new select option value
-            slider.slider( "values", [loNew,hiNew]);
-            
-            // Set value of high input to new select option value
-            $selectHi.val(hiNew);
-        });
-        $selectHi.change( function() {
-            console.log( "++ change event HIGH select" );
-            myChangeEventCallback($selectHi);
-            // Set high value in values array to new select option value
-//            slider.slider( "values", [loNew,this.value]);
-            
-            // Set value of high input to new select option value
-//            $inputHi.val(this.value);
-
-//            console.log( "$inputHi.val: ", $inputHi.val());
+//            console.log( "++ change event HIGH input" );
+            myChangeEventCallback($inputHi);
 
             // Set value of high variable to new select option value
 //            hiNew = this.value;
+
+            // Set high value in values array to new select option value
+//            slider.slider( "values", [loNew,hiNew]);
+            
+            // Set value of high input to new select option value
+//            $selectHi.val(hiNew);
+        });
+        $selectHi.change( function() {
+//            console.log( "++ change event HIGH select" );
+            myChangeEventCallback($selectHi);
+
+            // Set value of high variable to new select option value
+//            hiNew = this.value;
+
+            // Set high value in values array to new select option value
+//            slider.slider( "values", [loNew,hiNew]);
+            
+            // Set value of high input to new select option value
+//            $inputHi.val(hiNew);
+
+//            console.log( "$inputHi.val: ", $inputHi.val());
         });
         var myChangeEventCallback = function( myElement ) {
 //            console.log( "myElement ++ change event **", myElement, "**." );
-            console.log( "myElement", myElement );
-            console.log( "myElement.value", myElement.val() );
+//            console.log( "myElement", myElement );
+//            console.log( "myElement.value", myElement.val() );
 
-                console.log( "pre values: ", [loNew, hiNew] );
+//                console.log( "pre values: ", [loNew, hiNew] );
 
 //            console.log( "start $inputLo.val: ", $inputLo.val());
 //            console.log( "start $inputHi.val: ", $inputHi.val());
@@ -295,14 +307,14 @@ v/1.0
 //            console.log( "myElementNameParts: ", myElementNameParts );
 
             if ( myElementNameParts[1]==="Lo" ) {
-                console.log( "LO: ", myElementNameParts[1] );
+//                console.log( "LO: ", myElementNameParts[1] );
 
                 // Set value of high variable to new select option value
                 loNew = myElement.val();
 
                 // Set low value in values array to new select option value
                 slider.slider( "values", [loNew, hiNew] );
-                console.log( "inner values: ", [loNew, hiNew] );
+//                console.log( "inner values: ", [loNew, hiNew] );
 //                console.log( "slider.values: ", slider.slider( "values" ) );
 
                 if ( myElementNameParts[0]==="inpu" ) {
@@ -315,14 +327,14 @@ v/1.0
                     console.log( "LO error" );
                 };
             } else if ( myElementNameParts[1]==="Hi" ) {
-                console.log( "HI: ", myElementNameParts[1] );
+//                console.log( "HI: ", myElementNameParts[1] );
 
                 // Set value of high variable to new select option value
                 hiNew = myElement.val();
 
                 // Set high value in values array to new select option value
                 slider.slider( "values", [loNew, hiNew] );
-                console.log( "inner values: ", [loNew, hiNew] );
+//                console.log( "inner values: ", [loNew, hiNew] );
 //                console.log( "slider.values: ", slider.slider( "values" ) );
 
                 if ( myElementNameParts[0]==="inpu" ) {
@@ -335,10 +347,10 @@ v/1.0
                     console.log( "HI error" );
                 };
             } else {
-                console.log( "ERROR" );
+                console.log( "ERROR (Range)" );
             }
 
-            console.log( "post values: ", [loNew, hiNew] );
+//            console.log( "post values: ", [loNew, hiNew] );
 
 //            console.log( "end $inputLo.val: ", $inputLo.val());
 //            console.log( "end $inputHi.val: ", $inputHi.val());
