@@ -5,79 +5,9 @@ pluginSlider.js
 Author : Jeffrey D. Stein
 Title : Slider Plugin
 Date Created : 2011-May-24
-Last Updated : 2011-Sep-20
-Version : 4.0
+Last Updated : 2013-Apr-26
+Version : 4.2
 
-Notes
-=-=-=-=-=-=-=-=-=-=-=-=-=
-2011-Sep-26, 2011-Sep-30, 2011-Oct-03
-v/4.1
- - Attempting to add synchronization:  values entered into text inputs updates handle values.
--------------------------
-2011-Sep-20
-v/4.0
- - Moved code that finds/creates value(s), min, max inputs outside of the create event callback function.
- - Created aliases for settings: '*.value(s)', '*.min', '*.max'.
--------------------------
-2011-Aug-17
-2011-Sep-19
-v/3.9
- - Various edits.
--------------------------
-2011-Aug-16
-v/3.8
- - Comment out console logging.
--------------------------
-2011-Aug-11
-v/3.7
- - Added CSS notches to single, lower and upper range inputs.
- - Consolidated some styles using LESS.
--------------------------
-2011-Aug-11
-v/3.6
- - Optimization help from Kirin Murphy:
- -- Added "parseInt" to lower and upper range input value getters.
- -- General optimization.
--------------------------
-2011-Aug-09
-v/3.5
- - Added code that inserts min and max inputs if they aren't hard-coded, or sets values of existing min and max inputs.
--------------------------
-2011-Aug-09
-v/3.4
- - Added code to put all inputs inside a fieldset.
- - Added settings for min and max classes.
--------------------------
-2011-Aug-04
-v/3.3
- - Never mind.  Seems to already work fine with unique fieldsets.
- - Need to tweak code so it accepts min and max inputs with unique fieldsets.
--------------------------
-2011-July-28
-v/3.2
- - Playing around with min and max inputs.  These should exist in the code so they don't need to be generated dynamically.
--------------------------
-2011-July-26
-v/3.1
- - Added code that creates and appends value input(s) to handle(s).
--------------------------
-2011-July-12
-v/3.0
- - Optimized by Kirin Murphy.
--------------------------
-2011-July-12
-v/2.0
- - Need to optimize so that data is grabbed from hard coded inputs (if they exist) before the create function runs.
- - Trying to make it a plugin.
--------------------------
-2011-June-20
-v/1.0
- - Some improvements.
--------------------------
-2011-May-24
-v/Beta
- - Starting out.  Not a plugin yet.
--------------------------
 =-=-=-=-=-=-=-=-=-=-=-=-=
 */
 
@@ -125,8 +55,6 @@ v/Beta
 			$mySlider.addClass('slider');
 
 			// Tell us which slider instance we are working with.
-//			console.log('::::::::::::::::::');
-//			console.log('$mySlider: ', $mySlider.attr('id'));
 
 			// Fieldset Checker - Make sure all inputs are in a fieldset.
 			// Find out if a fieldset exists within the slider already.
@@ -152,7 +80,6 @@ v/Beta
 			
 			// Get data from inputs and is a range slider.
 			if ( settings.getDataFromInputs === true && settings.range === true ) {
-//				console.log('range, from inputs...');
 
 				myValues.push( parseInt($mySlider.find('.' + settings.inputLowerClass).val()) );
 				myValues.push( parseInt($mySlider.find('.' + settings.inputUpperClass).val()) );
@@ -167,7 +94,6 @@ v/Beta
 
 				// Get data from inputs and is NOT a range slider.
 			} else if ( settings.getDataFromInputs === true && settings.range != true ) {
-//				console.log('NOT range, from inputs...');
 
 				myValue = parseInt($mySlider.find('.' + settings.inputSingleClass).val());
 				myMin = $mySlider.find('.' + settings.inputMinClass).val();
@@ -181,7 +107,6 @@ v/Beta
 			// Do nothing here if we are NOT getting data from inputs.
 			} else if ( settings.getDataFromInputs != true && settings.range === true ) {
 				// Value or values will be passed in.  Do nothing.
-//				console.log('passed in...');
 
 				// Create lower and upper value inputs & min and max inputs if we are passing in data.
 				var $myInputLower = $('<input />').addClass(settings.inputLowerClass).attr('type','text').attr('value',myValues[0]);
@@ -191,7 +116,6 @@ v/Beta
 
                 } else if ( settings.getDataFromInputs != true && settings.range != true ) {
 				// Value or values will be passed in.  Do nothing.
-//				console.log('passed in...');
 
 				// Create the value input & min and max inputs if we are passing in data.
 				var $myInputSingle = $('<input />').addClass(settings.inputSingleClass).attr('type','text').attr('value',myValue);
@@ -212,7 +136,6 @@ v/Beta
 				// If it's a range slider...
 				if ( settings.range === true ) {
 					var $myHandleMany = $mySlider.find('.ui-slider-handle');
-//						console.log('handles : ', $myHandleMany);
 
 					// Append lower and upper inputs to the handles.
 					$myInputLower.appendTo($myHandleMany[0]);
@@ -243,24 +166,19 @@ v/Beta
 				
 				// Select all text inside input on focus event.
 				$mySlider.find('input[type=text]').focus(function( ui ) {
-					console.log('i have focussed: ', $(this).attr('class'), $(this).attr('value'), $(this).val());
 					this.select();
 				});
 				
 				// Do stuff on blur event.
                 // Not really needed since the .change() event works.
 				/* $mySlider.find('input[type=text]').blur(function( ui ) {
-					console.log('i have blurred 1: ', $(this).attr('class'), $(this).attr('value'), $(this).val());
                     $(this).attr( 'value', ui.value );
-					console.log('i have blurred 2: ', $(this).attr('class'), $(this).attr('value'), $(this).val());
 				}); */
 
 				// Do stuff on change event.
                 // OK, this makes the value attribute equal to the value.  But does not make the slider move to the point, like as if the slider was clicked with mouse on a new point.
                 $mySlider.find('input[type=text]').change(function() {
-					console.log('i changed 1: ', $(this).attr('class'), $(this).attr('value'), $(this).val());
                     $(this).attr('value', $(this).val());
-					console.log('i changed 2: ', $(this).attr('class'), $(this).attr('value'), $(this).val());
 				});
                 
                 // Trigger the change function when change event happens.
@@ -272,9 +190,7 @@ v/Beta
                     var $theCurrentHandle = $mySlider.find('.ui-slider-handle');
                     var $myCurrentInput = $theCurrentHandle.find('input[type=text]');
                     $(this).mouseup(function() {
-                        console.log('i have click.focus 1: ', $myCurrentInput.attr('class'), $myCurrentInput.attr('value'));
                         $myCurrentInput.focus();
-                        console.log('i have click.focus 2: ', $myCurrentInput.attr('class'), $myCurrentInput.attr('value'));
                     });
                 };
 			};
@@ -282,7 +198,6 @@ v/Beta
 			var startSlider = function( $mySlider, ui ) {
 				// Increase opacity to full while sliding to highlight the handle.
 				$(ui.handle).children().css({'opacity':'1','filter':'Alpha(Opacity=100)'}); //setter
-//						console.log('ui.handle : ', ui.value);
 			};
 
 			var slideSlider = function( $mySlider, ui ) {
@@ -290,32 +205,19 @@ v/Beta
 //				ui.value = $(ui.handle).find('input').attr('value'); //setter
 				// Update input box with value of handle as it slides.
 
-//				console.log('ui.handle : ', ui.handle);
-//				console.log('-----');
-//				console.log('ui.value: ', ui.value);
-//				console.log('input val',$mySlider.find(ui.handle).find('input').val());
-//				console.log('$(ui.handle) : ', $(ui.handle));
-//				console.log('mySlider.find ui.handle : ', $mySlider.find(ui.handle));
 
 				$mySlider.find(ui.handle).find('input').val( ui.value );
 
-//				console.log('ui.value: ', ui.value);
-//				console.log('input val',$mySlider.find(ui.handle).find('input').val());
-//				console.log('ui.handle : ', ui.value);
 			};
 
 			var stopSlider = function( $mySlider, ui ) {
 				// Return opacity to normal.
 				$(ui.handle).children().css({'opacity':'0.75','filter':'Alpha(Opacity=75)'}); //setter
-//						console.log('ui.handle : ', ui.value);
 			};
 
 			var changeSlider = function( $mySlider, ui ) {
-				console.log('i am changing!: ', $mySlider.find('.ui-slider-handle').find('input[type=text]'));
 				// Update handle with value of input box as it slides.
-				console.log('ui.value 1: ', ui.value);
 				ui.value = $(ui.handle).find('input').attr('value'); //setter
-				console.log('ui.value 2: ', ui.value);
 				// Update input box with value of handle as it slides.
 //				$mySlider.find(ui.handle).find('input').val( ui.value );
 
@@ -333,27 +235,22 @@ v/Beta
 				value: myValue,
 				values: myValues,
 				create: function( event, ui ) {
-//					console.log('-CREATE event triggered');
 					createSlider( $mySlider, ui );
 				},
 				start: function( event, ui ) {
 					// Triggered when clicked
-					console.log('-START event triggered');
 					startSlider( $mySlider, ui );
 				},
 				stop: function( event, ui ) {
 					// Triggered when clicked
-		            console.log('-STOP event triggered');
 					stopSlider( $mySlider, ui );
 				},
 				slide: function( event, ui ) {
 					// NOT Triggered when clicked
-		            console.log('-SLIDE event triggered');
 					slideSlider( $mySlider, ui );
 				},
 				change: function( event, ui ) {
 					// Triggered when clicked
-		            console.log('-CHANGE event triggered');
 					changeSlider( $mySlider, ui );
 				}				
 		
@@ -364,7 +261,3 @@ v/Beta
 	};
 
 })(jQuery)
-
-//$(document).ready(function() {
-
-//});

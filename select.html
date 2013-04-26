@@ -98,7 +98,7 @@
     </div><!-- End demo -->
 </form>
 
-<script type="text/javascript" src="scripts/jquery-1.6.min.js"></script>
+<script type="text/javascript" src="scripts/jquery-1.6.4.min.js"></script>
 
 <script type="text/javascript" src="scripts/jquery-ui-1.8.13.custom.min.js"></script>
 
@@ -122,7 +122,6 @@
             range : "max",
             value : select[0].selectedIndex + 1,
             create : function( event, ui ) {
-//                console.log( "--create callback" );
                 createSlider( $thisSlider, ui );
             },
             slide : function( event, ui ) {
@@ -147,13 +146,8 @@
         var $thisSlider = $( "#sliderRange" );
         // Create an array of select elements.
         var select = $thisSlider.find( "select" );
-//        console.log( "select", select );
-//        console.log( "select[0]", select[0] );
-//        console.log( "select[1]", select[1] );
         var $selectLo = $( select ).eq(0).attr( "id", "selectLo" );
-//        console.log( "$selectLo", $selectLo );
         var $selectHi = $( select ).eq(1).attr( "id", "selectHi" );
-//        console.log( "$selectHi", $selectHi );
 
         var loNew = $selectLo.val();
         var hiNew = $selectHi.val();
@@ -175,14 +169,11 @@
 //            values: [select[0].value, select[1].value],
             values : [loNew, hiNew],
             create : function( event, ui ) {
-//                console.log( "-- create callback" );
                 createSlider( $thisSlider, ui );
             },
             start: function( event, ui ) {
-//                console.log( "-- start callback" );
             },
             slide: function( event, ui ) {
-//                console.log( "-- slide callback" );
 
                 // Sliding the LOW value
                 // Set the value of the first select element to the first thing in the values array
@@ -202,14 +193,11 @@
 
             },
             stop: function( event, ui ) {
-//                console.log( "-- stop callback" );
             },
             change: function( event, ui ) {
-//                console.log( "-- change callback" );
             }
         });
         $inputLo.change(function() {
-//            console.log( "++ change event LOW input" );
             myChangeEventCallback($inputLo);
 
             // Set value of low variable to new select option value
@@ -222,7 +210,6 @@
 //            $selectLo.val(loNew);
         });
         $selectLo.change(function() {
-//            console.log( "++ change event LOW select" );
             myChangeEventCallback($selectLo);
 
             // Set value of low variable to new select option value
@@ -235,7 +222,6 @@
 //            $inputLo.val(loNew);
         });
         $inputHi.change(function() {
-//            console.log( "++ change event HIGH input" );
             myChangeEventCallback($inputHi);
 
             // Set value of high variable to new select option value
@@ -248,7 +234,6 @@
 //            $selectHi.val(hiNew);
         });
         $selectHi.change( function() {
-//            console.log( "++ change event HIGH select" );
             myChangeEventCallback($selectHi);
 
             // Set value of high variable to new select option value
@@ -260,60 +245,41 @@
             // Set value of high input to new select option value
 //            $inputHi.val(hiNew);
 
-//            console.log( "$inputHi.val: ", $inputHi.val());
         });
         var myChangeEventCallback = function( myElement ) {
-//            console.log( "myElement ++ change event **", myElement, "**." );
-//            console.log( "myElement", myElement );
-//            console.log( "myElement.value", myElement.val() );
 
-//                console.log( "pre values: ", [loNew, hiNew] );
 
-//            console.log( "start $inputLo.val: ", $inputLo.val());
-//            console.log( "start $inputHi.val: ", $inputHi.val());
 
             var myElementName = $(myElement).attr('id');
-//            console.log( "myElementName: ", myElementName );
 
             var myElementNameParts = myElementName.split("t");
-//            console.log( "myElementNameParts: ", myElementNameParts );
 
             if ( myElementNameParts[1]==="Lo" ) {
-//                console.log( "LO: ", myElementNameParts[1] );
 
                 // Set value of high variable to new select option value
                 loNew = myElement.val();
 
                 // Set low value in values array to new select option value
                 slider.slider( "values", [loNew, hiNew] );
-//                console.log( "inner values: ", [loNew, hiNew] );
-//                console.log( "slider.values: ", slider.slider( "values" ) );
 
                 if ( myElementNameParts[0]==="inpu" ) {
-//                    console.log( "inpu: ", myElementNameParts[0] );
                     $selectLo.val(loNew);
                 } else if ( myElementNameParts[0]==="selec" ) {
-//                    console.log( "selec: ", myElementNameParts[0] );
                     $inputLo.val(loNew);
                 } else {
                     console.log( "LO error" );
                 };
             } else if ( myElementNameParts[1]==="Hi" ) {
-//                console.log( "HI: ", myElementNameParts[1] );
 
                 // Set value of high variable to new select option value
                 hiNew = myElement.val();
 
                 // Set high value in values array to new select option value
                 slider.slider( "values", [loNew, hiNew] );
-//                console.log( "inner values: ", [loNew, hiNew] );
-//                console.log( "slider.values: ", slider.slider( "values" ) );
 
                 if ( myElementNameParts[0]==="inpu" ) {
-//                    console.log( "inpu: ", myElementNameParts[0] );
                     $selectHi.val(hiNew);
                 } else if ( myElementNameParts[0]==="selec" ) {
-//                    console.log( "selec: ", myElementNameParts[0] );
                     $inputHi.val(hiNew);
                 } else {
                     console.log( "HI error" );
@@ -322,10 +288,7 @@
                 console.log( "ERROR (Range)" );
             }
 
-//            console.log( "post values: ", [loNew, hiNew] );
 
-//            console.log( "end $inputLo.val: ", $inputLo.val());
-//            console.log( "end $inputHi.val: ", $inputHi.val());
 
         };
     });

@@ -98,7 +98,7 @@
     </div><!-- End demo -->
 </form>
 
-<script type="text/javascript" src="scripts/jquery-1.6.min.js"></script>
+<script type="text/javascript" src="scripts/jquery-1.6.4.min.js"></script>
 
 <script type="text/javascript" src="scripts/jquery-ui-1.8.13.custom.min.js"></script>
 
@@ -122,7 +122,6 @@
             range: "max",
             value: select[0].selectedIndex + 1,
             create: function( event, ui ) {
-//                console.log( "--create callback" );
                 createSlider( $thisSlider, ui );
             },
             slide: function( event, ui ) {
@@ -167,44 +166,29 @@
 //            values: [select[0].value, select[1].value],
             values: [loNew, hiNew],
             create: function( event, ui ) {
-//                console.log( "--create callback" );
                 createSlider( $thisSlider, ui );
             },
             start: function( event, ui ) {
-//                console.log( "--start callback" );
             },
             slide: function( event, ui ) {
-//                console.log( "--slide callback" );
                 select[0].value = ui.values[0];
-//                console.log( "ui.values0: ", ui.values[0]);
                 select[1].value = ui.values[1];
-//                console.log( "ui.values1: ", ui.values[1]);
-//                console.log( "$inputLo.val: ", $inputLo.val());
                 $inputLo.val(ui.values[0]);
-//                console.log( "$inputLo.val: ", $inputLo.val());
-//                console.log( "$inputHi.val: ", $inputHi.val());
                 $inputHi.val(ui.values[1]);
-//                console.log( "$inputHi.val: ", $inputHi.val());
             },
             stop: function( event, ui ) {
-//                console.log( "--stop callback" );
             },
             change: function( event, ui ) {
-//                console.log( "--change callback" );
             }
         });
         $selectLo.change(function() {
             slider.slider( "values", [this.value,hiNew]);
-//            console.log( "$inputLo.val: ", $inputLo.val());
             $inputLo.val(this.value);
-//            console.log( "$inputLo.val: ", $inputLo.val());
             loNew = this.value;
         });
         $selectHi.change(function() {
             slider.slider( "values", [loNew,this.value]);
-//            console.log( "$inputHi.val: ", $inputHi.val());
             $inputHi.val(this.value);
-//            console.log( "$inputHi.val: ", $inputHi.val());
             hiNew = this.value;
         });
     });

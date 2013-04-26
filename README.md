@@ -23,11 +23,6 @@
 
 ## 2011-Oct-03
 
-#### select-log.html
-#### v/1.0
-
-* Attempt to get the slider to work for logarithmic value increments.  Not yet functional.
-
 #### select.html
 #### v/1.3
 
