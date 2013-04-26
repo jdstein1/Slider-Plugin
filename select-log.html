@@ -2,52 +2,26 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Select Slider - An extension of a jQuery UI plugin</title>
-<link type="text/css" href="./styles/jquery-ui-1.8.13.custom.css" rel="stylesheet">
+<title>Select (Logarithmic) - Universal Slider Plugin</title>
+
+<link rel="stylesheet" type="text/css" href="styles/jquery-ui-1.8.13.custom.css">
+
 <!-- Normal LESS inclusion notation for other browsers -->
-<link rel="stylesheet/less" href="./styles/slider.less" />
+<link rel="stylesheet/less" href="styles/slider.less" />
 <!-- Required LESS inclusion notation for Chrome -->
-<link rel="stylesheet" type="text/less" href="./styles/slider.less" />
-<link rel="stylesheet" type="text/less" href="./styles/custom.css" />
-<script type="text/javascript" src="./scripts/less-1.1.3.min.js"></script>
+<link rel="stylesheet" type="text/less" href="styles/slider.less" />
+
+<script type="text/javascript" src="scripts/less-1.1.3.min.js"></script>
+
 </head>
 <body>
-<!-- 
-Universal Slider Plugin Select Option Functionality
 
-This plugin adds functionality to the jQuery UI slider component.  This plugin uses jQuery, jQuery UI, and Less CSS.
-
-=-=-=-=-=-=-=-=-=-=-=-=-=
-select.html
-
-Author : Jeffrey D. Stein
-Title : Select Option Functionality (for Universal Slider jQuery Plugin)
-Date Created : 2011-Sep-23
-Last Updated : 2011-Sep-30
-Version : 1.1
-
-Notes
-=-=-=-=-=-=-=-=-=-=-=-=-=
-2011-Oct-03
-v/1.2
- - Append inputs to handles.
--------------------------
-2011-Sep-30
-v/1.1
- - Added form inputs that update in sync with the sliders and select options.
--------------------------
-2011-Sep-23
-v/1.0
- - Started work on extending the functionality of a jQuery UI slider demo.  Original demo allows min or max slider functionality with one select option form element.  I intend to add compatibility with a range slider that uses 2 select option form elements.
--------------------------
- -->
 <form id="box" autocomplete="off">
     <div class="demo">
-
-<!-- Min/Max Slider with Select Option Function -->
         <div class="slider" id="sliderMinMax">
-            <h3>Minimum</h3>
-            <p class="description">How to bind a min or max slider to an existing select element. The select stays visible to display the change. When the select is changed, the slider is updated, too.</p>
+            <!-- Minimum -->
+            <!-- Min/Max Slider with Select Option Function -->
+            <!-- How to bind a min or max slider to an existing select element. The select stays visible to display the change. When the select is changed, the slider is updated, too. -->
             <select name="" class="select" id="selectMinMax">
                 <option>1</option>
                 <option>2</option>
@@ -72,10 +46,10 @@ v/1.0
             </select>
             <input type="text" class="input" id="inputMinMax" value="" />
         </div>
-<!-- Range Slider with Select Option Function -->
         <div class="slider" id="sliderRange">
-            <h3>Range</h3>
-            <p class="description">How to bind a range slider to existing select elements. The selects stay visible to display the changes. When the select is changed, the slider is updated, too.</p>
+            <!-- Range -->
+            <!-- Range Slider with Select Option Function -->
+            <!-- How to bind a range slider to existing select elements. The selects stay visible to display the changes. When the select is changed, the slider is updated, too. -->
             <select name="" class="select" id="selectLo">
                 <option>1</option>
                 <option>2</option>
@@ -123,9 +97,12 @@ v/1.0
         </div>
     </div><!-- End demo -->
 </form>
-<script type="text/javascript" src="./scripts/jquery-1.6.min.js"></script>
-<script type="text/javascript" src="./scripts/jquery-ui-1.8.13.custom.min.js"></script>
-<!-- <script type="text/javascript" src="./scripts/pluginSlider.js"></script> -->
+
+<script type="text/javascript" src="scripts/jquery-1.6.min.js"></script>
+
+<script type="text/javascript" src="scripts/jquery-ui-1.8.13.custom.min.js"></script>
+
+<!-- <script type="text/javascript" src="scripts/pluginSlider.js"></script> -->
 <script type="text/javascript">
     $(function() {
         var $thisSlider = $( "#sliderMinMax" );
@@ -232,5 +209,6 @@ v/1.0
         });
     });
 </script>
+
 </body>
 </html>
