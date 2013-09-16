@@ -5,8 +5,6 @@ pluginSlider.js
 Author : Jeffrey D. Stein
 Title : Slider Plugin
 Date Created : 2011-May-24
-Last Updated : 2013-Apr-26
-Version : 4.2
 
 =-=-=-=-=-=-=-=-=-=-=-=-=
 */
@@ -24,6 +22,7 @@ Version : 4.2
 			inputLowerClass : 'inputLower',
 			inputUpperClass : 'inputUpper',
 			inputSingleClass : 'inputSingle',
+			log : false,
 			sliderUnits : 'mile',
 			theme : 'default', // potential setting for applying a unique style theme
 			readOnly : true, // potential setting for making the inputs read only
@@ -83,6 +82,7 @@ Version : 4.2
 
 				myValues.push( parseInt($mySlider.find('.' + settings.inputLowerClass).val()) );
 				myValues.push( parseInt($mySlider.find('.' + settings.inputUpperClass).val()) );
+				// Get values of min and max of slider.
 				myMin = $mySlider.find('.' + settings.inputMinClass).val();
 				myMax = $mySlider.find('.' + settings.inputMaxClass).val();
 
@@ -92,10 +92,11 @@ Version : 4.2
 				var $myInputLower = $mySlider.find('.' + settings.inputLowerClass);
 				var $myInputUpper = $mySlider.find('.' + settings.inputUpperClass);
 
-				// Get data from inputs and is NOT a range slider.
+			// Get data from inputs and is NOT a range slider.
 			} else if ( settings.getDataFromInputs === true && settings.range != true ) {
 
 				myValue = parseInt($mySlider.find('.' + settings.inputSingleClass).val());
+				// Get values of min and max of slider.
 				myMin = $mySlider.find('.' + settings.inputMinClass).val();
 				myMax = $mySlider.find('.' + settings.inputMaxClass).val();
 
