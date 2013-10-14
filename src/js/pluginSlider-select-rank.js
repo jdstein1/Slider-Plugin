@@ -1,5 +1,5 @@
     $(function() {
-        var $thisSlider = $( "#sliderMinMax" );
+        var $thisSlider = $( "#sliderRank" );
         var $thisSliderSelect = $thisSlider.find( "select" );
         var $thisSliderOptions = $thisSliderSelect.find( "option" );
 
