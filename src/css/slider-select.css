@@ -1,0 +1,72 @@
+.uni-slider.slider select {}
+.uni-slider.slider select.selectMin, 
+.uni-slider.slider select.selectMax {
+    font-size:0.8em;
+    letter-spacing:0.1em;
+    position:absolute;
+    top:0px;
+    height:auto;
+    border:none;
+    line-height:1;
+    padding-top:16px;
+    padding-bottom:0px;
+    margin-bottom:0;
+    z-index:50;
+}
+.uni-slider.slider select.selectMin { 
+    border-left:2px solid #f00;
+    left:-1px;
+    padding-left:4px;
+    text-align:left;
+}
+.uni-slider.slider select.selectMax { 
+    border-right:2px solid #f00;
+    right:-1px;
+    padding-right:4px;
+    text-align:right;
+}
+.uni-slider.slider select.selectSingle, 
+.uni-slider.slider select.selectLower, 
+.uni-slider.slider select.selectUpper, 
+.uni-slider.slider select.selectSingle option, 
+.uni-slider.slider select.selectLower option, 
+.uni-slider.slider select.selectUpper option { 
+    padding:1em;
+    background: orange;
+}
+.uni-slider.slider select.selectSingle, 
+.uni-slider.slider select.selectLower, 
+.uni-slider.slider select.selectUpper { 
+    width: 50%;
+    float: left;
+    position: relative;
+    /*left: -1.6em;*/
+    top: 3em;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-text-shadow: 0 2px 3px #000;
+    -webkit-text-shadow: 0 2px 3px #000;
+    text-shadow: 0 2px 3px #000;
+}
+.uni-slider.slider select.selectSingle option, 
+.uni-slider.slider select.selectSingle {
+    width: 100%;
+    background-color: rgba(255,0,0,0.5) !important;
+    border-color: rgba(255,0,0,0.5) !important;
+}
+.uni-slider.slider select.selectLower option, 
+.uni-slider.slider select.selectLower {
+    background-color: rgba(0,255,0,0.5) !important;
+    border-color: rgba(0,255,0,0.5) !important;
+}
+.uni-slider.slider select.selectUpper option, 
+.uni-slider.slider select.selectUpper {
+    background-color: rgba(0,0,255,0.5) !important;
+    border-color: rgba(0,0,255,0.5) !important;
+}
+.uni-slider.slider select.selectSingle:after {content:"rank input: ";}
+.uni-slider.slider select.selectLower:after {content:"lower input: ";}
+.uni-slider.slider select.selectUpper:after {content:"upper input: ";}

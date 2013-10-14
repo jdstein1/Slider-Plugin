@@ -13,6 +13,7 @@
 <!-- <link rel="stylesheet" type="text/less" href="css/slider.less" /> -->
 <!-- Compiled CSS -->
 <link rel="stylesheet" type="text/less" href="css/slider.css" />
+<link rel="stylesheet" type="text/less" href="css/slider-select.css" />
 
 <!-- Less CSS library -->
 <!-- <script type="text/javascript" src="js/lib/less-1.4.1.min.js"></script> -->
@@ -21,85 +22,160 @@
 <body>
 
 <form id="box" autocomplete="off">
-    <div class="demo">
+    <section class="demo">
+
         <div class="slider" id="sliderRank">
+            <h3>Naked Rank (Min) slider</h3>
+            <!-- #sliderRank -->
+            <!-- Rank slider getting values from javascript. -->
+        </div>
+
+        <div class="slider" id="sliderRank2">
+            <h3>Input Rank (Max) slider</h3>
+            <!-- #sliderRank2 -->
+            <!-- Rank slider getting values from html inputs. -->
+            <fieldset>
+                <input class="inputSingle" type="text" value="511">
+                <input class="inputMin" type="text" value="0">
+                <input class="inputMax" type="text" value="2000">
+            </fieldset>
+        </div>
+
+        <div class="slider" id="sliderRange">
+            <h3>Naked Range slider</h3>
+            <!-- #sliderRange -->
+            <!-- Range slider getting values from javascript. -->
+        </div>
+
+        <div class="slider" id="sliderRange2">
+            <h3>Input Range slider</h3>
+            <!-- #sliderRange2 -->
+            <!-- Range slider getting values from html inputs. -->
+            <fieldset>
+                <input class="inputLower" type="text" value="511">
+                <input class="inputUpper" type="text" value="1511">
+                <input class="inputMin" type="text" value="0">
+                <input class="inputMax" type="text" value="2000">
+            </fieldset>
+        </div>
+
+        <div class="slider" id="sliderSelectRankMin">
+            <h3>Select Rank (Min) slider</h3>
             <!-- Minimum -->
             <!-- Min/Max Slider with Select Option Function -->
             <!-- How to bind a min or max slider to an existing select element. The select stays visible to display the change. When the select is changed, the slider is updated, too. -->
-            <select name="" class="select" id="selectMinMax">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option selected="selected">4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-                <option>11</option>
-                <option>12</option>
-                <option>13</option>
-                <option>14</option>
-                <option>15</option>
-                <option>16</option>
-                <option>17</option>
-                <option>18</option>
-                <option>19</option>
-                <option>20</option>
-            </select>
-            <input type="text" class="inputSingle" id="inputMinMax" value="" />
+            <fieldset>
+                <select class="selectSingle" id="">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option selected="selected">4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                    <option>18</option>
+                    <option>19</option>
+                    <option>20</option>
+                </select>
+            </fieldset>
         </div>
-        <div class="slider" id="sliderRange">
+
+        <div class="slider" id="sliderSelectRankMax">
+            <h3>Select Rank (Max) slider</h3>
+            <!-- Maximum -->
+            <!-- Min/Max Slider with Select Option Function -->
+            <!-- How to bind a min or max slider to an existing select element. The select stays visible to display the change. When the select is changed, the slider is updated, too. -->
+            <fieldset>
+                <select class="selectSingle" id="">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option selected="selected">11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                    <option>18</option>
+                    <option>19</option>
+                    <option>20</option>
+                </select>
+            </fieldset>
+        </div>
+
+        <div class="slider" id="sliderSelectRange">
+            <h3>Select Range slider</h3>
             <!-- Range -->
             <!-- Range Slider with Select Option Function -->
             <!-- How to bind a range slider to existing select elements. The selects stay visible to display the changes. When the select is changed, the slider is updated, too. -->
-            <select name="" class="select" id="">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option selected="selected">4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-                <option>11</option>
-                <option>12</option>
-                <option>13</option>
-                <option>14</option>
-                <option>15</option>
-                <option>16</option>
-                <option>17</option>
-                <option>18</option>
-                <option>19</option>
-                <option>20</option>
-            </select>
-            <select name="" class="select" id="">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-                <option selected="selected">11</option>
-                <option>12</option>
-                <option>13</option>
-                <option>14</option>
-                <option>15</option>
-                <option>16</option>
-                <option>17</option>
-                <option>18</option>
-                <option>19</option>
-                <option>20</option>
-            </select>
+            <fieldset>
+                <select class="selectLower" id="">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option selected="selected">4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                    <option>18</option>
+                    <option>19</option>
+                    <option>20</option>
+                </select>
+                <select class="selectUpper" id="">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option selected="selected">11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                    <option>18</option>
+                    <option>19</option>
+                    <option>20</option>
+                </select>
+            </fieldset>
         </div>
-    </div><!-- End demo -->
+
+    </section><!-- End demo -->
+
 </form>
 
 <!-- jQuery JS library -->
@@ -110,11 +186,68 @@
 
 <!-- <script type="text/javascript" src="js/pluginSlider.js"></script> -->
 
-<script type="text/javascript" src="js/pluginSlider-select-rank.js"></script>
 <!-- JDS - Need to refactor code... -->
+<script type="text/javascript" src="js/pluginSlider-select.js"></script>
+<!-- <script type="text/javascript" src="js/pluginSlider-select-rank.js"></script> -->
+<!-- <script type="text/javascript" src="js/pluginSlider-select-range.js"></script> -->
 
-<script type="text/javascript" src="js/pluginSlider-select-range.js"></script>
-<!-- JDS - Need to refactor code... -->
+<script type="text/javascript">
+  $(document).ready(function() {
+
+      // Get all data points from here:
+      $('#sliderRank').doUniSliderSelect({
+          getDataFromInputs : false,
+          range : 'min',
+          value : 510,
+          max : 2000,
+          min : 0,
+          step : 2
+      });
+
+      // Get all data points from here:
+      $('#sliderRank2').doUniSliderSelect({
+          getDataFromInputs : true,
+          range : 'max',
+          step : 5
+      });
+
+      // Get all data points from here:
+      $('#sliderRange').doUniSliderSelect({
+          getDataFromInputs : false,
+          range : true,
+          values : [510,1510],
+          max : 2000,
+          min : 0,
+          step : 10
+      });
+
+      // Get all data points from here:
+      $('#sliderRange2').doUniSliderSelect({
+          getDataFromInputs : true,
+          range : true,
+          step : 50
+      });
+
+      // Get all data points from here:
+      $('#sliderSelectRankMin').doUniSliderSelect({
+          getDataFromInputs : true,
+          range : 'min'
+      });
+
+      // Get all data points from here:
+      $('#sliderSelectRankMax').doUniSliderSelect({
+          getDataFromInputs : true,
+          range : 'max'
+      });
+
+      // Get all data points from here:
+      $('#sliderSelectRange').doUniSliderSelect({
+          getDataFromInputs : true,
+          range : true
+      });
+
+  });
+</script>
 
 </body>
 </html>

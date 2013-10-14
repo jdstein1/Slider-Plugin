@@ -51,7 +51,7 @@ Date Created : 2011-May-24
 			var myMax = settings.max;
 
 			// Add slider class to $mySlider.
-			$mySlider.addClass('slider');
+			$mySlider.addClass('uni-slider');
 
 			// Tell us which slider instance we are working with.
 
@@ -93,7 +93,7 @@ Date Created : 2011-May-24
 				var $myInputUpper = $mySlider.find('.' + settings.inputUpperClass);
 
 			// Get data from inputs and is NOT a range slider.
-			} else if ( settings.getDataFromInputs === true && settings.range != true ) {
+			} else if ( settings.getDataFromInputs === true && settings.range !== true ) {
 
 				myValue = parseInt($mySlider.find('.' + settings.inputSingleClass).val());
 				// Get values of min and max of slider.
@@ -106,7 +106,7 @@ Date Created : 2011-May-24
 				var $myInputMaxF = $mySlider.find('.' + settings.inputMaxClass);
 
 			// Do nothing here if we are NOT getting data from inputs.
-			} else if ( settings.getDataFromInputs != true && settings.range === true ) {
+			} else if ( settings.getDataFromInputs !== true && settings.range === true ) {
 				// Value or values will be passed in.  Do nothing.
 
 				// Create lower and upper value inputs & min and max inputs if we are passing in data.
@@ -115,7 +115,7 @@ Date Created : 2011-May-24
 				var $myInputMinT = $('<input />').addClass(settings.inputMinClass).attr('type','text').attr('value',myMin);
 				var $myInputMaxT = $('<input />').addClass(settings.inputMaxClass).attr('type','text').attr('value',myMax);
 
-                } else if ( settings.getDataFromInputs != true && settings.range != true ) {
+                } else if ( settings.getDataFromInputs !== true && settings.range !== true ) {
 				// Value or values will be passed in.  Do nothing.
 
 				// Create the value input & min and max inputs if we are passing in data.

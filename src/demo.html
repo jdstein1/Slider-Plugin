@@ -21,16 +21,30 @@
 <body>
 
 <form id="box" autocomplete="off" name="box">
+
+      <div class="slider" id="sliderRank">
+        <h3>Naked Rank (Min) slider</h3>
+        <!-- #sliderRank -->
+        <!-- Rank slider getting values from javascript. -->
+      </div>
+
+      <div class="slider" id="sliderRank2">
+        <h3>Input Range (Max) slider</h3>
+        <!-- #sliderRank2 -->
+        <!-- Rank slider getting values from html inputs. -->
+        <fieldset>
+          <input class="inputSingle" type="text" value="111">
+          <input class="inputMin" type="text" value="0">
+          <input class="inputMax" type="text" value="200">
+        </fieldset>
+      </div>
+
       <div class="slider" id="sliderRange">
         <h3>Naked Range slider</h3>
         <!-- #sliderRange -->
         <!-- Range slider getting values from javascript. -->
       </div>
-      <div class="slider" id="sliderRank">
-        <h3>Naked Rank slider</h3>
-        <!-- #sliderRank -->
-        <!-- Rank slider getting values from javascript. -->
-      </div>
+
       <div class="slider" id="sliderRange2">
         <h3>Input Range slider</h3>
         <!-- #sliderRange2 -->
@@ -41,178 +55,6 @@
           <input class="inputMin" type="text" value="0">
           <input class="inputMax" type="text" value="2000">
         </fieldset>
-      </div>
-      <div class="slider" id="sliderRank2">
-        <h3>Input Range slider</h3>
-        <!-- #sliderRank2 -->
-        <!-- Rank slider getting values from html inputs. -->
-        <fieldset>
-          <input class="inputSingle" type="text" value="111">
-          <input class="inputMin" type="text" value="0">
-          <input class="inputMax" type="text" value="200">
-        </fieldset>
-      </div>
-
-      <div class="slider" id="sliderSelectRank">
-        <h3>Select Range slider</h3>
-        <!-- #sliderSelectRank -->
-        <!-- Min/Max Slider with Select Option Function -->
-        <!-- How to bind a min or max slider to an existing select element. The select stays visible to display the change. When the select is changed, the slider is updated, too. -->
-        <select name="" class="select" id="selectMinMax">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option selected="selected">4</option>
-          <option>5</option>
-          <option>6</option>
-          <option>7</option>
-          <option>8</option>
-          <option>9</option>
-          <option>10</option>
-          <option>11</option>
-          <option>12</option>
-          <option>13</option>
-          <option>14</option>
-          <option>15</option>
-          <option>16</option>
-          <option>17</option>
-          <option>18</option>
-          <option>19</option>
-          <option>20</option>
-        </select>
-        <input type="text" class="inputSingle" id="inputMinMax" value="" />
-      </div>
-
-      <div class="slider" id="sliderSelectRange">
-        <h3>Select Range slider</h3>
-        <!-- #sliderSelectRange -->
-        <!-- Range Slider with Select Option Function -->
-        <!-- How to bind a range slider to existing select elements. The selects stay visible to display the changes. When the select is changed, the slider is updated, too. -->
-        <select name="" class="select" id="">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option selected="selected">4</option>
-          <option>5</option>
-          <option>6</option>
-          <option>7</option>
-          <option>8</option>
-          <option>9</option>
-          <option>10</option>
-          <option>11</option>
-          <option>12</option>
-          <option>13</option>
-          <option>14</option>
-          <option>15</option>
-          <option>16</option>
-          <option>17</option>
-          <option>18</option>
-          <option>19</option>
-          <option>20</option>
-        </select>
-        <select name="" class="select" id="">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-          <option>6</option>
-          <option>7</option>
-          <option>8</option>
-          <option>9</option>
-          <option>10</option>
-          <option selected="selected">11</option>
-          <option>12</option>
-          <option>13</option>
-          <option>14</option>
-          <option>15</option>
-          <option>16</option>
-          <option>17</option>
-          <option>18</option>
-          <option>19</option>
-          <option>20</option>
-        </select>
-      </div>
-
-      <div class="slider" id="sliderSelectRankLog">
-        <h3>Logarithmic Select Range slider</h3>
-        <!-- #sliderSelectRank -->
-        <!-- Min/Max Slider with Select Option Function -->
-        <!-- How to bind a min or max slider to an existing select element. The select stays visible to display the change. When the select is changed, the slider is updated, too. -->
-        <select name="" class="select" id="selectMinMax">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option selected="selected">4</option>
-          <option>5</option>
-          <option>6</option>
-          <option>7</option>
-          <option>8</option>
-          <option>9</option>
-          <option>10</option>
-          <option>11</option>
-          <option>12</option>
-          <option>13</option>
-          <option>14</option>
-          <option>15</option>
-          <option>16</option>
-          <option>17</option>
-          <option>18</option>
-          <option>19</option>
-          <option>20</option>
-        </select>
-        <input type="text" class="inputSingle" id="inputMinMax" value="" />
-      </div>
-
-      <div class="slider" id="sliderSelectRangeLog">
-        <h3>Logarithmic Select Range slider</h3>
-        <!-- #sliderSelectRange -->
-        <!-- Range Slider with Select Option Function -->
-        <!-- How to bind a range slider to existing select elements. The selects stay visible to display the changes. When the select is changed, the slider is updated, too. -->
-        <select name="" class="select" id="">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option selected="selected">4</option>
-          <option>5</option>
-          <option>6</option>
-          <option>7</option>
-          <option>8</option>
-          <option>9</option>
-          <option>10</option>
-          <option>11</option>
-          <option>12</option>
-          <option>13</option>
-          <option>14</option>
-          <option>15</option>
-          <option>16</option>
-          <option>17</option>
-          <option>18</option>
-          <option>19</option>
-          <option>20</option>
-        </select>
-        <select name="" class="select" id="">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-          <option>6</option>
-          <option>7</option>
-          <option>8</option>
-          <option>9</option>
-          <option>10</option>
-          <option selected="selected">11</option>
-          <option>12</option>
-          <option>13</option>
-          <option>14</option>
-          <option>15</option>
-          <option>16</option>
-          <option>17</option>
-          <option>18</option>
-          <option>19</option>
-          <option>20</option>
-        </select>
       </div>
 
 </form>
@@ -238,6 +80,13 @@
       });
 
       // Get all data points from here:
+      $('#sliderRank2').doUniSlider({
+          getDataFromInputs : true,
+          range : 'max',
+          step : 5
+      });
+
+      // Get all data points from here:
       $('#sliderRange').doUniSlider({
           getDataFromInputs : false,
           range : true,
@@ -245,13 +94,6 @@
           max : 2000,
           min : 0,
           step : 10
-      });
-
-      // Get all data points from here:
-      $('#sliderRank2').doUniSlider({
-          getDataFromInputs : true,
-          range : 'max',
-          step : 5
       });
 
       // Get all data points from here:
@@ -264,7 +106,7 @@
       // Get all data points from here:
       $('#sliderSelectRank').doUniSlider({
           getDataFromInputs : 'select',
-          range : 'max'
+          range : 'min'
       });
 
       // Get all data points from here:
