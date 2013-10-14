@@ -66,7 +66,8 @@ Date Created : 2011-May-24
                 // Find out if a fieldset exists within the slider already.
 
                 // Yes, we already have a fieldset, so...
-                // Find all inputs so they can be gathered into my fieldset.
+                // Find all inputs so they can be gathered into my 
+                // fieldset.
 
                 var $myFieldset = $mySlider.find('fieldset');
 
@@ -116,7 +117,8 @@ Date Created : 2011-May-24
                 myMin = $mySlider.find('.' + settings.inputMinClass).val();
                 myMax = $mySlider.find('.' + settings.inputMaxClass).val();
 
-                // Find the lower and upper value inputs & min and max inputs if we are getting data from inputs.
+                // Find the lower and upper value inputs & min and max 
+                // inputs if we are getting data from inputs.
                 var $myInputMinT = $mySlider.find('.' + settings.inputMinClass);
                 var $myInputMaxT = $mySlider.find('.' + settings.inputMaxClass);
                 var $myInputLower = $mySlider.find('.' + settings.inputLowerClass);
@@ -130,7 +132,8 @@ Date Created : 2011-May-24
                 myMin = $mySlider.find('.' + settings.inputMinClass).val();
                 myMax = $mySlider.find('.' + settings.inputMaxClass).val();
 
-                // Find the value input & min and max inputs if we are getting data from inputs.
+                // Find the value input & min and max inputs if we are 
+                // getting data from inputs.
                 var $myInputSingle = $mySlider.find('.' + settings.inputSingleClass);
                 var $myInputMinF = $mySlider.find('.' + settings.inputMinClass);
                 var $myInputMaxF = $mySlider.find('.' + settings.inputMaxClass);
@@ -159,7 +162,8 @@ Date Created : 2011-May-24
                     // $selectAll.find('option:nth-child(myMaxL-1)').addClass(settings.selectUpperClass);
                 }
 
-                // Create lower and upper value inputs & min and max inputs if we are passing in data.
+                // Create lower and upper value inputs & min and max 
+                // inputs if we are passing in data.
                 var $myInputLower = $('<input />').addClass(settings.inputLowerClass).attr('type','text').attr('value',myValues[0]);
                 var $myInputUpper = $('<input />').addClass(settings.inputUpperClass).attr('type','text').attr('value',myValues[1]);
                 var $myInputMinT = $('<input />').addClass(settings.inputMinClass).attr('type','text').attr('value',myMin);
@@ -186,7 +190,8 @@ Date Created : 2011-May-24
                     console.log('myMax: ',myMax);
                 }
 
-                // Create the value input & min and max inputs if we are passing in data.
+                // Create the value input & min and max inputs if we are 
+                // passing in data.
                 var $myInputSingle = $('<input />').addClass(settings.inputSingleClass).attr('type','text').attr('value',myValue);
                 var $myInputMinF = $('<input />').addClass(settings.inputMinClass).attr('type','text').attr('value',myMin);
                 var $myInputMaxF = $('<input />').addClass(settings.inputMaxClass).attr('type','text').attr('value',myMax);
@@ -245,7 +250,9 @@ Date Created : 2011-May-24
                 }); */
 
                 // Do stuff on change event.
-                // OK, this makes the value attribute equal to the value.  But does not make the slider move to the point, like as if the slider was clicked with mouse on a new point.
+                // OK, this makes the value attribute equal to the value.  
+                // But does not make the slider move to the point, like as 
+                // if the slider was clicked with mouse on a new point.
                 $mySlider.find('input[type=text]').change(function() {
                     $(this).attr('value', $(this).val());
                 });
@@ -254,7 +261,8 @@ Date Created : 2011-May-24
                 // $mySlider.find('input[type=text]').change(changeSlider);
 
                 // Focus on the text input when the handle is clicked.
-                // But I don't want the text input to have focus during and after it is slid (slided?).
+                // But I don't want the text input to have focus during and 
+                // after it is slid (slided?).
                 var editSlider = function( $mySlider ) {
                     var $theCurrentHandle = $mySlider.find('.ui-slider-handle');
                     var $myCurrentInput = $theCurrentHandle.find('input[type=text]');
@@ -265,7 +273,8 @@ Date Created : 2011-May-24
             };
             
             var startSlider = function( $mySlider, ui ) {
-                // Increase opacity to full while sliding to highlight the handle.
+                // Increase opacity to full while sliding to highlight the 
+                // handle.
                 $(ui.handle).children().css({'opacity':'1','filter':'Alpha(Opacity=100)'}); //setter
             };
 
