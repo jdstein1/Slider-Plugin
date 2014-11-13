@@ -73,7 +73,7 @@ Date Created : 2011-May-24
 
                 // Input checker
                 if ( $mySlider.find('input').length > 0 ) {
-                    console.log($mySlider[0].id+' -- inputs!!!!');
+                    // console.log($mySlider[0].id+' -- inputs!!!!');
                     var $inputAll = $mySlider.find('input');
                     settings.getDataFromInputs = 'input';
 
@@ -82,7 +82,7 @@ Date Created : 2011-May-24
 
                 // Select/Option checker
                 } else if ( $mySlider.find('select').length > 0 ) {
-                    console.log($mySlider[0].id+' -- selects!!!!');
+                    // console.log($mySlider[0].id+' -- selects!!!!');
                     var $selectAll = $mySlider.find('select');
                     settings.getDataFromInputs = 'select';
 
@@ -91,12 +91,12 @@ Date Created : 2011-May-24
 
                 // Error
                 } else {
-                    console.log($mySlider[0].id+' -- error...');
+                    // console.log($mySlider[0].id+' -- error...');
                 }
 
 
             } else {
-                console.log($mySlider[0].id+' -- no inputs, no selects...');
+                // console.log($mySlider[0].id+' -- no inputs, no selects...');
 
                 // Making a fieldset if it does not exist.
                 var $myFieldset = $('<fieldset />');
@@ -106,7 +106,7 @@ Date Created : 2011-May-24
 
             };
 
-            console.log('settings.getDataFromInputs: ',settings.getDataFromInputs);
+            // console.log('settings.getDataFromInputs: ',settings.getDataFromInputs);
             
             // Get data from inputs and is a range slider.
             if ( settings.getDataFromInputs === 'input' && settings.range === true ) {
@@ -151,12 +151,12 @@ Date Created : 2011-May-24
                     // Get values of min and max of slider.
                     // var myMinL = $selectAll[0].length;
                     myMin = $selectAll[0][0].value;
-                    console.log('MyMin: ',myMin);
+                    // console.log('MyMin: ',myMin);
                     var myMaxL = $selectAll[1].length;
                     myMax = $selectAll[1][myMaxL-1].value;
-                    console.log('myMax: ',myMax);
+                    // console.log('myMax: ',myMax);
 
-                    console.log($selectAll);
+                    // console.log($selectAll);
 
                     // $selectAll.find('option:nth-child(0)').addClass(settings.selectLowerClass);
                     // $selectAll.find('option:nth-child(myMaxL-1)').addClass(settings.selectUpperClass);
@@ -177,17 +177,17 @@ Date Created : 2011-May-24
                     // myValue = parseInt($mySlider.find('.' + settings.inputSingleClass).val());
                     myValue = $selectAll[0].value;
 
-                    console.log($selectAll);
+                    // console.log($selectAll);
 
                     // $selectAll.find('option:nth-child(0)').addClass(settings.selectSingleClass);
 
                     // Get values of min and max of slider.
                     // var myMinL = $selectAll[0].length;
                     myMin = $selectAll[0][0].value;
-                    console.log('myMin: ',myMin);
+                    // console.log('myMin: ',myMin);
                     var myMaxL = $selectAll[0].length;
                     myMax = $selectAll[0][myMaxL-1].value;
-                    console.log('myMax: ',myMax);
+                    // console.log('myMax: ',myMax);
                 }
 
                 // Create the value input & min and max inputs if we are 
@@ -236,7 +236,7 @@ Date Created : 2011-May-24
                 };
 
                 // Reduce opacity to normal.
-                $mySlider.find('.ui-slider-handle').children().css({'opacity':'0.75','filter':'Alpha(Opacity=75)'});
+                // $mySlider.find('.ui-slider-handle').children().css({'opacity':'0.75','filter':'Alpha(Opacity=75)'});
                 
                 // Select all text inside input on focus event.
                 $mySlider.find('input[type=text]').focus(function( ui ) {
@@ -275,7 +275,7 @@ Date Created : 2011-May-24
             var startSlider = function( $mySlider, ui ) {
                 // Increase opacity to full while sliding to highlight the 
                 // handle.
-                $(ui.handle).children().css({'opacity':'1','filter':'Alpha(Opacity=100)'}); //setter
+                // $(ui.handle).children().css({'opacity':'1','filter':'Alpha(Opacity=100)'}); //setter
             };
 
             var slideSlider = function( $mySlider, ui ) {
@@ -289,7 +289,7 @@ Date Created : 2011-May-24
 
             var stopSlider = function( $mySlider, ui ) {
                 // Return opacity to normal.
-                $(ui.handle).children().css({'opacity':'0.75','filter':'Alpha(Opacity=75)'}); //setter
+                // $(ui.handle).children().css({'opacity':'0.75','filter':'Alpha(Opacity=75)'}); //setter
             };
 
             var changeSlider = function( $mySlider, ui ) {

@@ -34,18 +34,18 @@
                 // Sliding the LOW value
                 // Set the value of the first select element to the first thing in the values array
                 select[0].value = ui.values[0];
-                console.log( "ui.values0: ", ui.values[0]);
+                // console.log( "ui.values0: ", ui.values[0]);
                 // Set the value of the first input element to the first thing in the values array
                 $inputLo.val(ui.values[0]);
-                console.log( "$inputLo.val: ", $inputLo.val());
+                // console.log( "$inputLo.val: ", $inputLo.val());
 
                 // Sliding the HIGH value
                 // Set the value of the second select element to the second thing in the values array
                 select[1].value = ui.values[1];
-                console.log( "ui.values1: ", ui.values[1]);
+                // console.log( "ui.values1: ", ui.values[1]);
                 // Set the value of the second input element to the second thing in the values array
                 $inputHi.val(ui.values[1]);
-                console.log( "$inputHi.val: ", $inputHi.val());
+                // console.log( "$inputHi.val: ", $inputHi.val());
 
             },
             stop: function( event, ui ) {
@@ -121,7 +121,7 @@
                 } else if ( myElementNameParts[0]==="selec" ) {
                     $inputLo.val(loNew);
                 } else {
-                    console.log( "LO error" );
+                    // console.log( "LO error" );
                 };
             } else if ( myElementNameParts[1]==="Hi" ) {
 
@@ -136,10 +136,10 @@
                 } else if ( myElementNameParts[0]==="selec" ) {
                     $inputHi.val(hiNew);
                 } else {
-                    console.log( "HI error" );
+                    // console.log( "HI error" );
                 };
             } else {
-                console.log( "ERROR (Range)" );
+                // console.log( "ERROR (Range)" );
             }
 
         };

@@ -332,3 +332,5 @@ body { font-size: 62.5% }
     border: 0;
     background: #c0c0c0;
 }
+:focus, :focus #inner-editor {outline: 0 !important; background: #ff8000 !important;}
+-webkit-inner-spin-button {position: absolute;}

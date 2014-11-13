@@ -10,14 +10,14 @@
 
     var array = $thisSliderOptions.map(
         function() {
-            console.log('this: ',this);
+            // console.log('this: ',this);
             return [$.map($(this).data(), function(v) {
                 return v;
             })];
         }
     ).get();
 
-    console.log(array);
+    // console.log(array);
 
         var thisSliderValue = $thisSliderSelect.val();
 
