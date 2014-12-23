@@ -98,21 +98,22 @@ body { font-size: 62.5% }
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
     line-height: 1;
-    padding-top: 2em;
-    padding-bottom: 0;
+    padding-top: 1.5em;
+    padding-bottom: 0.5em;
     margin-bottom: 0;
     z-index: 50;
+    /*width: auto;*/
 }
 .uni-slider.slider .inputMin {
-    border-left: 2px solid #eee;
+    border-left: 1px solid #eee;
     left: -1px;
-    padding-left: 4px;
+    /*padding-left: 4px;*/
     text-align: left;
 }
 .uni-slider.slider .inputMax {
-    border-right: 2px solid #eee;
+    border-right: 1px solid #eee;
     right: -1px;
-    padding-right: 4px;
+    /*padding-right: 4px;*/
     text-align: right;
 }
 .ui-slider.ui-corner-all {
@@ -134,7 +135,7 @@ body { font-size: 62.5% }
 }
 .ui-widget-content {
     border: 1px solid #eee;
-    background: #eee;
+    /*background: #eee;*/
     color: #362b36;
 }
 .ui-widget-header {

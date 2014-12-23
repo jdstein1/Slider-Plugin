@@ -10,18 +10,28 @@
 <!-- Normal LESS inclusion notation for other browsers -->
 <!-- <link rel="stylesheet/less" href="css/slider.less" /> -->
 <!-- Required LESS inclusion notation for Chrome -->
-<!-- <link rel="stylesheet" type="text/less" href="css/slider.less" /> -->
+<link rel="stylesheet" type="text/less" href="css/slider.less" />
 <!-- Compiled CSS -->
-<link rel="stylesheet" type="text/less" href="css/slider.css" />
+<!-- <link rel="stylesheet" type="text/less" href="css/slider.css" /> -->
+<link rel="stylesheet" type="text/less" href="css/slider-select.css" />
 
+<script>
+less = {env: "development", async: true};
+</script>
 <!-- Less CSS library -->
-<!-- <script type="text/javascript" src="lib/less-1.4.1.min.js"></script> -->
+<script type="text/javascript" src="lib/less-1.4.1.min.js" data-env="development"></script>
+<script>
+// less.watch();
+</script>
 
 </head>
 <body>
-<h2>Work in progress...</h2>
-<form id="box" autocomplete="off">
-    <div class="demo">
+
+<form id="box" autocomplete="off" name="box">
+
+    <h2>Work in progress...</h2>
+
+    <!-- <div class="demo"> -->
         <div class="slider" id="sliderRank">
             <!-- Minimum -->
             <!-- Min/Max Slider with Select Option Function -->
@@ -99,7 +109,7 @@
                 <option>100</option>
             </select>
         </div>
-    </div><!-- End demo -->
+    <!-- </div> --><!-- End demo -->
 </form>
 
 <!-- jQuery JS library -->
@@ -108,12 +118,37 @@
 <!-- jQuery UI JS library -->
 <script type="text/javascript" src="lib/jquery-ui-1.8.13.custom.min.js"></script>
 
-<!-- <script type="text/javascript" src="js/pluginSlider.js"></script> -->
+<script type="text/javascript" src="js/pluginSlider.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
 
-<script type="text/javascript" src="js/pluginSlider-select-rank.js"></script>
+      // Get all data points from here:
+      $('#sliderRank').doUniSlider({
+          getDataFromInputs : 'select',
+          range : 'min',
+          value : 112,
+          max : 200,
+          min : 0,
+          step : 2
+      });
+
+      // Get all data points from here:
+      $('#sliderRange').doUniSlider({
+          getDataFromInputs : 'select',
+          range : 'min',
+          value : 112,
+          max : 200,
+          min : 0,
+          step : 2
+      });
+
+  });
+</script>
+
+<!-- <script type="text/javascript" src="js/pluginSlider-select-rank.js"></script> -->
 <!-- JDS - Need to refactor code... -->
 
-<script type="text/javascript" src="js/pluginSlider-select-range.js"></script>
+<!-- <script type="text/javascript" src="js/pluginSlider-select-range.js"></script> -->
 <!-- JDS - Need to refactor code... -->
 
 <script type="text/javascript">

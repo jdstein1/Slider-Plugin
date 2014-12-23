@@ -86,11 +86,18 @@ body {
 	margin:3em !important;
 }
 .uni-slider.slider {
-	width:99%;
-	margin:10em 0 0 !important;
+	width:100%;
+	margin:5em 0;
 	text-align:center;
 	clear:both;
 	display:block;
+	float: left;
+	h3 {
+	    position: absolute;
+	    top:0;
+	    left:0;
+	    width: 100%;
+	}
 	.sliderNotchDown {
 		position:relative;
 		top:-0.5em;
@@ -117,7 +124,7 @@ body {
 		width:100% !important;
 		position:relative;
 		z-index:1;
-		border:none;
+		border:0 !important;
 		background: none repeat scroll 0 0 transparent;
 		left: 0;
 		margin: 0;
@@ -178,8 +185,8 @@ body {
 		border:none;
 		.border-radius(0);
 		line-height:1;
-		padding-top:16px;
-		padding-bottom:0px;
+		padding-top: 1.5em;
+		padding-bottom: 0.5em;
 		margin-bottom:0;
 		z-index:50;
 	}
@@ -362,11 +369,14 @@ body {
     }
 
 	.ui-slider-disabled { 
-		color:#999;background:#eee;border-color:#eee - #333;
+		color:#999;background:#eee;
+		border-color:#eee - #333;
 	    .ui-slider-range { 
-		    color:#999;background:#ddd;border-color:#ddd - #333;}
+		    color:#999;background:#ddd;
+		    border-color:#ddd - #333;}
 	    .ui-slider-handle { 
-		    color:#999;background:#ccc;border-color:#ccc - #333;}
+		    color:#999;background:#ccc;
+		    border-color:#ccc - #333;}
     }
 
 /* Custom style rules... */
@@ -379,3 +389,6 @@ body {
 
 .handle {  }
 #handleMinMax, #handleLo, #handleHi { border:none; background:#c0c0c0; }
+
+:focus, :focus #inner-editor {outline: 0 !important; background: #ff8000 !important;}
+-webkit-inner-spin-button {position: absolute;}
