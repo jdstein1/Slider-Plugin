@@ -77,7 +77,6 @@ body { font-size: 62.5% }
     left: -1.6em;
     top: -2.5em;
     font-weight: bold;
-    position: absolute;
     color: #fff;
     background-color: #aaa;
     border-radius: 4px;
@@ -89,8 +88,8 @@ body { font-size: 62.5% }
 }
 .uni-slider.slider .inputMin,
 .uni-slider.slider .inputMax {
-    font-size: .8em;
-    letter-spacing: .1em;
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
     position: absolute;
     top: 0;
     height: auto;
@@ -99,7 +98,7 @@ body { font-size: 62.5% }
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
     line-height: 1;
-    padding-top: 16px;
+    padding-top: 2em;
     padding-bottom: 0;
     margin-bottom: 0;
     z-index: 50;
