@@ -4,90 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Slider Plugin</title>
 	<link rel="stylesheet" href="css/reset.css">
-	<style>
-	/* COLORS */
-		html {background: #fed;}
-		body {background: #def;}
-		table {background: #ccf;}
-		th, td {background: #ffc;}
-		th:nth-of-type(2n+2), td:nth-of-type(2n+2) {background: #fcf;}
-		th:nth-of-type(3n+3), td:nth-of-type(3n+3) {background: #cff;}
-		iframe {background: #fff;}
-		header {background: #cfc;}
-		nav {background: #fcc;}
-		nav ul {background: #9cf;}
-		nav ul li {background: #efe;}
-		section {background: #fc9;}
-		section article {background: #9fc;}
-		footer {background: #cf9;}
-	/* LAYOUT */
-		html {font-family: 'Helvetica','Arial',sans-serif; color: #666;}
-		/*body {font-size: 62.5%;}*/
-		table {width: 100%; height: 100%;}
-		th, td {padding:5px;}
-		th {height: 2em; padding-bottom: 0;}
-		h1, h2, h3, h4, h5, h6, p {text-align: center; margin: 0; padding: 10px;}
-		p {text-align: left;}
-		h1 {font-size: 2em;}
-		h2 {font-size: 1.5em;}
-		h3 {font-size: 1.25em;}
-		h4 {font-size: 1.125em;}
-		h5 {font-size: 1em;}
-		h6 {font-size: 0.875em;}
-		th p, td p {text-align: center;}
-		* + p {padding-top: 0;}
-		em {font-family: monospace; font-size: 1.5em}
-		iframe {}
-		header {
-			display: block;
-			width: 100%;
-			min-height: 2em;
-		}
-		nav {
-			display: block;
-			width: 100%;
-			min-height: 2em;
-			margin: 0 auto; padding: 0;
-			text-align: center;
-			overflow: hidden;
-		}
-		nav ul {
-			/*float: left;*/
-			width: 80%;
-			margin: 0 auto; padding: 0;
-			text-align: center;
-			clear: both;
-		}
-		nav ul li {
-			float: left;
-			list-style-type: none;
-			width: 33%;
-			margin: 0; padding: 0;
-			text-align: center;
-		}
-		nav ul li a {
-			display: block;
-			margin: 0; padding: 1em;
-			text-align: center;
-			clear: both;
-		}
-		section {
-			display: block;
-			width: 100%;
-			height: 100%;
-		}
-		section article {
-			display: block;
-			width: 100%;
-			height: 100%;
-		}
-		footer {
-			display: block;
-			width: 100%;
-			min-height: 2em;
-		}
-	/* OVERRIDES */
-	</style>
+	<link rel="stylesheet" href="css/test.css">
 </head>
 <body>
 	<header>
@@ -106,15 +23,15 @@
 		<table>
 			<tbody>
 				<tr>
-					<th>
+					<th width="33%">
 						<h3>inputs</h3>
 						<p>slider using inputs</p>
 					</th>
-					<th>
+					<th width="auto">
 						<h3>select</h3>
 						<p>slider using select/option</p>
 					</th>
-					<th>
+					<th width="33%">
 						<h3>selectLog</h3>
 						<p>slider using select/option with logarithmic scale</p>
 					</th>
@@ -137,18 +54,11 @@
 	<footer>
 		<h4>&copy; 2014</h4>
 	</footer>
-	<style>
-		nav {
-			/*display: block;*/
-			display: none;
-		}
-	</style>
 	<!-- jQuery JS library -->
 	<script type="text/javascript" src="lib/jquery-1.6.4.min.js"></script>
 	<script>
 		$(function () {
 			console.log('jQuery ready!');
-
 			var checkHeights = function () {
 				console.log('START checkHeights');
 				var heights = [], 
@@ -158,16 +68,7 @@
 					hFooter = 0;
 				hWin = window.innerHeight;
 				hHeader = $('header').height();
-				console.log('nav.css(display): ', $('nav').css('display'));
-				if ( $('nav').css('display') !== 'none' ) {
-					console.log('VISIBLE')
-					hNav = $('nav').height();
-					// return hNav;
-				} else {
-					console.log('NOT VISIBLE')
-					// hNav = 0;
-					// return hNav;
-				};
+				hNav = $('nav').height();
 				hFooter = $('footer').height();
 				// console.log('hWin,hHeader,hNav,hFooter');
 				console.table(heights);
@@ -177,7 +78,6 @@
 			};
 			// $('iframe').load(checkHeights());
 			checkHeights();
-
 		});
 	</script>
 </body>

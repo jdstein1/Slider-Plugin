@@ -10,9 +10,19 @@ A jQuery plugin by Jeff Stein
 * **Date Created**: 2011-May-24
 * **GitHub Pages**: [link](http://jdstein1.github.io/Slider-Plugin/)
 * **Dependencies**:
-	* jQuery: [link](http://jquery.com/download/)
-	* jQuery UI: [link](http://jqueryui.com/download/)
-	* Less CSS: [link](http://lesscss.org/)
+	* Required
+		* jQuery (v1.6.4+): [link](http://jquery.com/download/)
+		* jQuery UI (v1.8.13+): [link](http://jqueryui.com/download/)
+	* Optional
+		* Less CSS (v1.4.1+): [link](http://lesscss.org/)
+
+## Usage
+
+### Running locally
+
+### Integrating with your project
+
+
 
 ## Release Notes
 
